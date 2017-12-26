@@ -18,8 +18,17 @@ var server = app.listen(8000, function() {
     console.log('Przykładowa aplikacja nasłuchuje na http://localhost:8000');
 });
 
-app.get('/first-template', function(req, res){
-    res.render('first-template');
+app.get('/log-google', function(req, res){
+    res.render('log-google',
+    {
+        login: "Wpisz login",
+        password: "Wpisz hasło"
+    }
+);
+});
+
+app.get('/welcome', function(req, res){
+    res.render('welcome');
 });
 
 app.use(function (req, res, next) {
